@@ -333,14 +333,6 @@ public class ProxyService extends VpnService implements TestConnection.OnResultL
             b.addAddress(PRIVATE_VLAN6_CLIENT, 126);
             b.addRoute("::", 0);
         }
-        b.addDnsServer("8.8.8.8");
-        b.addDnsServer("8.8.4.4");
-        b.addDnsServer("1.1.1.1");
-        b.addDnsServer("1.0.0.1");
-        if (enable_ipv6) {
-            b.addDnsServer("2001:4860:4860::8888");
-            b.addDnsServer("2001:4860:4860::8844");
-        }
         pfd = b.establish();
         LogHelper.i("VPN", "pfd established");
 
